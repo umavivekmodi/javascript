@@ -32,18 +32,25 @@ string , number , bigInt , boolean , symbol, undefined , null
 
 let name = uma modi 
 let age = 28
+*/
 let marrid = true 
 let child = null
 let  job =  undefined 
-let number of  expected salary=  1234569644326269818687;
-const zodic sign =   jemini 
-*/
+let salary=  1234569644326269818687;
+// const sym1 = new symbol();
+
 
 // non- primitive data  types
 
 //  object
-
+console.log(typeof name)
 console.log(typeof age);
+console.log(typeof isLoggedIn);
+console.log(typeof  marrid);
+console.log(typeof  job);   // undefined 
+console.log(typeof salary);
+console.log( typeof child)  // null is an object
+// console.log(typeof sym1); wrong
 
 
 
