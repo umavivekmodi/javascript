@@ -41,3 +41,15 @@ let score2 = 200
 let score3 = 300
 
 console.log(Array.of(score1,score2,score3));
+
+let class1Student = 56
+let class2Student =65
+let class3Student = 43
+let class4Student =76
+console.log(Array.of(class1Student,class2Student,class3Student,class4Student));
+
+let name1 = "riya" 
+let name2 = "sonal"
+let name3 = "mohita"
+
+console.log(Array.of(name1,name2,name3));
