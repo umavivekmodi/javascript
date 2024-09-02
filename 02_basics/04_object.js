@@ -28,14 +28,33 @@ Object.defineProperty(myObject,'Gender' ,{
 // console.log(myObject["Gender"]);
 
 myObject.Gender = "male"
-console.log(myObject["Gender"]);
+// console.log(myObject["Gender"]);
 
-myObject.age = 34
-console.log(myObject["age"]);
-console.log(typeof mySymbol);
-console.log(myObject[mySymbol]);
-console.log(myObject);
+// myObject.age = 34
+// console.log(myObject["age"]);
+// console.log(typeof mySymbol);
+// console.log(myObject[mySymbol]);
+// console.log(myObject);
 
 
 
-//deep freeze 
+//deep freeze ???? 
+
+
+
+const person = {
+name : "Vivek Modi" ,
+age : 30 , 
+Address : {
+Regidency: "Guamn Heights 607", 
+street : "Patel Marg",
+city: "Jaipur",  
+country : "India"
+}};
+console.log(person);
+//  Apply => deep freeze in person
+deepfreeze(person);
+ person.name = "vedika",
+ person.Address.city = "Bikaner"
+
+ console.log(person);
