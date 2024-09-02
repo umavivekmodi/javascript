@@ -64,14 +64,14 @@ JsUser.greetingTwo = function(){
 
 // console.log(JsUser.greeting);
 
-const Rank = Symbol("Rank - I")
+const Position = Symbol("good")
 
 const myObj = {
     RollNo : 101 ,
     Sname : "Akash" ,
     "Full name" : "Akash Kumar Mathur",
     Class :  12,
-    [Rank] : "Rank - I" , 
+    [Position] : "Rank - I" , 
     Address : "Mansarover, Jaipur",
     Email : "Kumar@gmail.com" , 
     PhoneNumber : 2354879166 ,
@@ -79,7 +79,30 @@ const myObj = {
     UpsentInClass : ["Wednesday", "Friday"]
 
 }
-// console.log(myObj);
-console.log(typeof myObj[Rank]);
+console.log(typeof myObj);
+// console.log(typeof myObj[Position]);
 myObj.Email = "AkashKumar@gmail.com"
-console.log(typeof myObj["email"]);
+console.log(myObj["Email"]);
+console.log(myObj[Position]);
+myObj.RollNo = 208 ;
+
+console.log(myObj["RollNo"]);
+// myObj.Email = "Akashkumarmathur@googledotcom" 
+// console.log(myObj["Email"]);
+
+
+// but  when im try to change all the properties and only 1 freeze
+//  freexe the Address property :=
+Object.defineProperty(myObj, 'Address',{
+    writable: false ,
+    configurable : false
+});
+
+myObj.Address = "shri Dungargarh , Bikaner"
+console.log(myObj["Address"]);
+
+//  we use this changes in only Address property 
+// try to change other object key
+
+myObj.PhoneNumber = 1234567890
+console.log(myObj["PhoneNumber"]); // other element of object are  Accept the changes 
