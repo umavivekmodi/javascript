@@ -30,13 +30,13 @@ const JsUser = {
 //access the object =>
     // console.log(JsUser.email);  
 // second method 
-console.log(JsUser["email"]); 
-console.log(JsUser["full name"]);  
+// console.log(JsUser["email"]); 
+// console.log(JsUser["full name"]);  
 // console.log(JsUser.mySym);  
 // console.log(typeof mySym);    //undefined
 // console.log(typeof JsUser.mySym);   // string 
-console.log(JsUser[mySym2]);
-console.log(typeof JsUser[mySym2]);
+// console.log(JsUser[mySym2]);
+// console.log(typeof JsUser[mySym2]);
 
 
 // change the value of object
@@ -56,11 +56,30 @@ JsUser.greeting = function(){
 
 
 JsUser.greetingTwo = function(){
-    console.log(`Hello Js User, ${this.name}`);
+    // console.log(`Hello Js User, ${this.name}`);
 }
 
-console.log(JsUser.greeting());
-console.log(JsUser.greetingTwo());
+// console.log(JsUser.greeting());
+// console.log(JsUser.greetingTwo());
 
-console.log(JsUser.greeting);
+// console.log(JsUser.greeting);
 
+const Rank = Symbol("Rank - I")
+
+const myObj = {
+    RollNo : 101 ,
+    Sname : "Akash" ,
+    "Full name" : "Akash Kumar Mathur",
+    Class :  12,
+    [Rank] : "Rank - I" , 
+    Address : "Mansarover, Jaipur",
+    Email : "Kumar@gmail.com" , 
+    PhoneNumber : 2354879166 ,
+    isLoggedIn : true , 
+    UpsentInClass : ["Wednesday", "Friday"]
+
+}
+// console.log(myObj);
+console.log(typeof myObj[Rank]);
+myObj.Email = "AkashKumar@gmail.com"
+console.log(typeof myObj["email"]);
