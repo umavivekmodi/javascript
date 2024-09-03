@@ -85,7 +85,7 @@ function addnumbers(num1 , num2){
 //  }
 //  console.log(loginUserMassage("hitesh"));
 //  console.log(loginUserMassage(""));
-console.log(loginUserMassage());  // jb hum koi value pass he nahi krte hai to answer =>undefined aata hai
+// console.log(loginUserMassage());  // jb hum koi value pass he nahi krte hai to answer =>undefined aata hai
 
 //9   if else statement use
 // function loginUserMassage(username ){
@@ -96,6 +96,18 @@ function loginUserMassage(username ="sam"){
         console.log("Please enter a username")
         return
     }
-    return `${username} just logged in `
+    // return `${username} just logged in `
     }
-    console.log(loginUserMassage());
+    // console.log(loginUserMassage());
+
+    function passwordMassage(password= "asdfg1234"){
+        if(password === "asdfg1234"){
+            return `${password} is just logged in`
+        }
+        else{ 
+            console.log("incorrect password, please try again.")
+        return "" ;  // Return an empty string instead of undefined  => it remove undefined that show in the terminal
+    }
+}
+    let password = "qwer4567"
+    console.log(passwordMassage(password))
