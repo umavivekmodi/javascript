@@ -9,7 +9,7 @@ function claculateCardPrize(val1,val2 , ...num1){           // rest operator
  return num1
 }
 // console.log(claculateCardPrize(2))
-console.log(claculateCardPrize(200,400,600,800,900,700))
+// console.log(claculateCardPrize(200,400,600,800,900,700))
 
 
 //pass the object in function
@@ -20,7 +20,7 @@ const user = {
 }
 
 function handleObject (anyObject){
-   console.log(`username is ${anyObject.username} and prize is ${anyObject.prize}`)
+//    console.log(`username is ${anyObject.username} and prize is ${anyObject.prize}`)
 }
 
 // handleObject(user)
@@ -42,7 +42,7 @@ function tryObject(myObj){
          phone number is ${myObj.phoneNumber} and
           logged ${myObj.LoggedIn}`)
 }
-tryObject(myUser)
+// tryObject(myUser)
 
 
 //pass the Array in function
