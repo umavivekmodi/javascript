@@ -83,6 +83,13 @@ const userLoggedIn = true
 const debitCard = true
 const LoggedFromGoogle = false
 const LoggedInFromEmail = true
-if(userLoggedIn && debitCard && 2 == 3){
+const guestUser = false
+if(userLoggedIn && debitCard && 2 == 3){   // sari condition true hogi tbhi result show hoga
     console.log("Allow to buy course");
 }
+
+if(LoggedFromGoogle || LoggedInFromEmail || guestUser){  // sub condition me se ek condition bhi true ha to result display hoga
+    console.log("User logged In");
+}
+
+
