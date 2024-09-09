@@ -45,4 +45,7 @@ console.log(val1);
 
 // terniary Operator
 
-condition ? true : false 
+// condition ? true : false 
+
+const iceTeaPrize = 100
+iceTeaPrize <= 80 ? console.log("less then 80") : console.log("more then 80")
