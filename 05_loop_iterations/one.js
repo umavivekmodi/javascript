@@ -63,10 +63,13 @@ for (let index = 0; index < myArray.length; index++) {
 
 //continue
 for (let i = 1; i <= 20 ; i++) {
-    if (i ==5) {
-        console.log(`Detected 5`);
+    if (i ==5 || i==10 || i==15 || i==20) {
+        console.log(`value is detected ${i}`);
         continue;        
     }
     console.log(`value of i is ${i}`);
     
 }
+
+
+
