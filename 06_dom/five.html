@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code || DOM</title>
+</head>
+<body style="background-color: #5b5c5a; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>    
+    // how to add one more list item
+    // design a function
+    function addLanguage(langName){
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`
+        // attached in ul
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    // addLanguage("c++");
+    // addLanguage("typescript");
+
+    // in large scale  addOptimizationLanguage
+    
+    function addOptiLanguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+addOptiLanguage("golang")
+addOptiLanguage("core-Javascript")
+
+
+function addlanguages(langName){
+    const li =document.createElement("li");
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+}  
+addlanguages("Node-JS")
+
+// edit the value first select the value 
+const secondlang = document.querySelector("li:nth-child(2)")
+// secondlang.innerHTML = "Mojo"
+//second approch to create element => replace with
+const newli = document.createElement('li')
+newli.textContent = "Moizek"
+//its create in only memory 
+secondlang.replaceWith(newli)
+
+//edit to replace => outerhtml
+const firstlang =document.querySelector("li:first-child")
+firstlang.outerHTML = '<li>Typescript</li>'
+
+
+// remove
+const lastLang = document.querySelector('li:last-child')
+lastLang.remove()
+</script>
+</html>
