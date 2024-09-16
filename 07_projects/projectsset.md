@@ -16,6 +16,8 @@ const body = document.querySelector("body");
 buttons.forEach(function(button){
 console.log(button);
 button.addEventListener('click' , function(e){
+//  only this code solve all problem without using if condition
+// body.style.backgroundColor = e.target.id; 
   console.log(e);
   console.log(e.target);
   if(e.target.id === grey) {
@@ -69,10 +71,27 @@ else if(weight === ''|| weight < 0 || isNaN(weight)){
 results.innerHTML =`Please give a valid weight ${weight}`;
 } 
 else{
- const bmi = (weight / ((height*weight)/1000)).toFixed(2)
+ const bmi = (weight / ((height*weight)/10000)).toFixed(2)
  // show the result
  results.innerHTML=`<span>${bmi}</span>`
 }
 });
+
+```
+
+## Project 3 solution code 
+
+```javascript
+const clock = document.getElementById('clock');
+// document.querySelector('#clock')
+// let date = new Date();
+// console.log(date.toLocaleTimeString());
+
+// setInterval(function(){},1000)
+setInterval(function(){
+  let date = new Date();
+// console.log(date.toLocaleTimeString());
+clock.innerHTML = date.toLocaleTimeString();
+},1000);
 
 ```
