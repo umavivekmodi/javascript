@@ -5,13 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Events </title>
 </head>
-<body>
+<body style="background-color: #414141; color: rgb(153, 224, 215);">
     <h2>Amazing images</h2>
     <div>
-        <ul>
-            <li><img>
-            <li><a href="https://google.com" id="google">Google</a></li>
+         <!-- copy the image -->
+        <ul id="images">
+            <li><img height="200px" width="200px"  id="photoshop" src="https://images.pexels.com/photos/20401560/pexels-photo-20401560/free-photo-of-yosemite-valley-california-united-states.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop"></li>
+            <li><img height="200px"  width="200px" id="party" src="https://images.pexels.com/photos/26599731/pexels-photo-26599731/free-photo-of-a-woman-sitting-in-a-cinema-and-eating-popcorn.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="library" src="https://images.pexels.com/photos/18935891/pexels-photo-18935891/free-photo-of-a-hugging-couple-on-the-escalator-in-a-book-store.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="" ></li>
+            <li><img height="200px"  width="200px" id="black&white" src="https://images.pexels.com/photos/23383403/pexels-photo-23383403/free-photo-of-black-and-white-photo-of-men-playing-accordions-on-a-sidewalk.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="fallen" src="https://images.pexels.com/photos/27501815/pexels-photo-27501815/free-photo-of-a-river-flowing-through-a-forested-area.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="food" src="https://images.pexels.com/photos/28260042/pexels-photo-28260042/free-photo-of-hotcakes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="old" src="https://images.pexels.com/photos/28220698/pexels-photo-28220698/free-photo-of-nguoitamchuyenhouse-sai-gon-vi-t-nam-2020-saigon-vietnam-2020.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="dream" src="https://images.pexels.com/photos/20370059/pexels-photo-20370059/free-photo-of-woman-in-a-wedding-dress-posing-in-a-bridal-shop.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><img height="200px"  width="200px" id="history" src="https://images.pexels.com/photos/28000979/pexels-photo-28000979/free-photo-of-tourists-walking-in-ruins-of-library-of-celsus-in-anatolia-in-turkey.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt=""></li>
+            <li><a style="color: aliceblue;" id="google"   href="https://google.com">Google</a></li>
         </ul>
     </div>
 </body>
+<script>
+// javascript run the events  sequentially some of exceptional but java script is a sequentially runed language sometimes we done async work 
+// one of the browser events that are awak in some activity like move the mouse or press the keyboard button , drag and drop and so on ....n browser activity
+// onclick aproch give problamatic or us 
+
+// <li><img height="200px"  width="200px" id="library" src="https://images.pexels.com/photos/18935891/pexels-photo-18935891/free-photo-of-a-hugging-couple-on-the-escalator-in-a-book-store.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"  alt="" onclick="alert('libraryLove')"></li>
+
+
+//attachedEvent()
+// jquery - onEventlistener - on
+// some imp  questions 
+//type ,timestamp ,defaultPrevent 
+// target ,toElement , srcElement ,currentTarget
+// clientX , clientY ,screenX , screenY
+// altKey , ctrlKey ,shiftKey , keyCode
+
+
+// but the second aproch is that
+
+// document.getElementById('library').onclick = function(){
+//     alert('Library Love clicked')
+// } 
+// use eventlistner because its gives more  feactures
+// best aproch for this
+
+// document.getElementById('library').addEventListener('click', function(){
+//     alert("library Love clicked again")
+// })
+
+// document.getElementById('library').addEventListener('click', function(e){
+//    console.log(e);
+   
+// }, false)
+// // event propergation == false or true iske two context hote hai one Eventbubbling 2) EventCapturing
+// // false is a eventBubbling sometimes user use eventCapturing
+// // two examples :-
+// document.getElementById('images').addEventListener('click', function(e){
+//     console.log("clicked inside the ul");
+// })
+
+// document.getElementById('dream').addEventListener('click', function(e){
+//     console.log("a beautiful bride in white gown");
+//     e.stopPropagation()
+// })
+
+// document.getElementById('google').addEventListener('click', function(e){
+//     e.preventDefault()
+//     e.stopPropagation()
+//     console.log("google clicked");
+// },false)
+
+
+// when i click on images then they vanished 
+document.querySelector('#images').addEventListener('click', function(e){
+    // console.log(e)
+    // console.log(e.target);
+    console.log(e.target.tagName);
+    if(e.target.tagName=== 'IMG'){
+        console.log(e.target.id);
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode
+    console.log(e.target);
+    removeIt.remove()
+    // removeIt.parentNode.removeChild(removeIt)
+
+    } 
+})
+</script>
 </html>
