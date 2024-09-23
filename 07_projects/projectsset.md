@@ -201,3 +201,115 @@ function newGame(){
 };
 
 ```
+
+## Project 6 unlimitedColor in my style code 
+
+``` javascript
+
+
+const start = document.querySelector('#start')
+const stop =document.querySelector('#stop')
+const body = document.querySelector('body')
+let intervalId ; 
+// const formula = (Math.floor(Math.random()*16));
+
+function randomColor (){
+  const hex = '0123456789ABCDEF';
+    let color = '#';
+    for(i=0;i<6;i++){
+      const formula = (Math.floor(Math.random()*16));
+      color += hex[formula];
+      }
+      return color;
+}
+console.log(randomColor());
+// const randomColor = function(){
+//   const hex = '0123456789ABCDEF';
+//   let color = '#';
+//   for(i=0;i<6;i++){
+//     const formula = (Math.floor(Math.random()*16));
+//     color += hex[formula];
+//   }
+//   return color ;
+// }
+// console.log(randomColor());
+
+
+function changebgColor(){
+  body.style.backgroundColor = randomColor();
+}
+
+start.addEventListener('click', function(){
+if(!intervalId){
+intervalId = setInterval(changebgColor,1000)
+}
+});
+
+stop.addEventListener('click', function(){
+  clearInterval(intervalId);
+  intervalId= null; 
+});
+
+
+```
+
+## Project 6 by hitesh choudhary mentor
+``` javascript
+//generate random color
+// Math.floor(Math.random()*10)
+const randomColor = function(){
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for(i=0 ; i<6 ;i++){
+    color += hex[Math.floor(Math.random()*16)]
+  };
+  return color;
+}
+console.log(randomColor());
+let intervalId;
+const startChangingColor = function(){
+  
+  if(!intervalId){
+    intervalId = setInterval(changeBgColor , 1000)
+  };
+
+  
+  function changeBgColor(){
+  document.body.style.backgroundColor = randomColor()
+  };
+};
+
+const stopChangingColor = function(){
+  clearInterval(intervalId);
+  intervalId = null;
+}
+document.querySelector('#start').addEventListener('click' , startChangingColor);
+
+document.querySelector('#stop').addEventListener('click' , stopChangingColor);
+
+```
+
+## Project 5 solution code 
+```javascript
+const insert = document.getElementById('insert')
+
+window.addEventListener('keydown', (e)=>{
+  insert.innerHTML = `
+  <div class= ''color>
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key ===" "? "Space": e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  </table>
+  </div>
+  
+`;
+});
+```
