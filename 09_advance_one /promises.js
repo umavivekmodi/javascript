@@ -103,13 +103,66 @@ console.log(username)
 const promiseFive = new Promise(function(resolve , reject){
     setTimeout(function(){
      let error = true
+    //  let error = false
+
      if(!error){
         resolve({username:"javascript",password:"345"})
      }   else{
         reject("ERROR: js went wrong")
      }
     },1000)
-})
-promiseFive.then((){
+});
+// promiseFive.then((){
+//     console.log()
+// })
+// using second syntex async and await => cant handle errors directaly 
+// async function consumePromiseFive(){
+//     const response = await promiseFive
+//     console.log(response);
+// }
+// consumePromiseFive()
+// rape it in try and catch block without it gives us rejection error 
+async function consumePromiseFive(){
+  try {
+    const response = await promiseFive
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+consumePromiseFive()
 
+// for next class 
+async function getAllusers(){
+   const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data =  response.json()
+  console.log(data);
+}
+getAllusers()
+// promise pending 
+
+
+// async function getAllusers(){
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         // console.log(response);
+//    const data = await response.json()
+//    console.log(data);
+//     } catch (error) {
+//         console.log("E: " , error);
+//     }
+//  }
+//  getAllusers()
+
+
+//  .then .catch formate me 
+
+
+fetch('https://github.com/hiteshchoudhary')
+.then((response)=>{
+return response.json()
 })
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>console.log(error))
