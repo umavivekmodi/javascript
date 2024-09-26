@@ -166,3 +166,7 @@ return response.json()
     console.log(data);
 })
 .catch((error)=>console.log(error))
+
+
+// fetch is a exciting feacture of javascript ,  js before its in browser but
+//  in node js we use fatch all paradime are changed 
